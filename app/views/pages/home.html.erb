@@ -1,0 +1,18 @@
+<h1 class= text-center >Welcome to Yelp</h1>
+
+<div class="container">
+  <div class="row">
+  <% @restaurants.each do |restaurant| %>
+    <div class="col-xs-12 col-sm-4">
+      <%= render "restaurants/card", restaurant: restaurant %>
+    </div>
+  <% end %>
+
+  </div>
+  <div class="row">
+  <%= link_to "allrestaurants", restaurants_path, class: "beautiful-link" %>
+
+  </div>
+
+</div>
+

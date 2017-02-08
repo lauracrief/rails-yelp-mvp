@@ -1,0 +1,16 @@
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://media-cdn.tripadvisor.com/media/photo-s/0b/4b/32/fb/restaurant-le-cinq.jpg');">
+ <div class="card-shadow"></div>
+  <div class="card-category"></div>
+  <div class="card-description">french</div>
+    <h2><%= restaurant.name%></h2>
+    <p><%= restaurant.address%></p>
+    <p>
+    <% restaurant.stars.times do %>
+    <i class="fa fa-stars"></i>
+    <% end %>
+    </p>
+  </div>
+
+
+
+
