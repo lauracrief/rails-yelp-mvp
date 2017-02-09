@@ -1,24 +1,41 @@
-<p id="notice"><%= notice %></p>
+<div class="text-center">
+ <h2><%= @restaurant.name%></h2>
+    <p><%= @restaurant.address%></p>
+    <p>
+    <% @restaurant.stars do %>
+    <i class="fa fa-stars"></i>
+    <% end %>
+    </p>
+    <p>
+    <%= @restaurant.category%>
+    </p>
+    <p>
+    <%= @restaurant.phone_number%>
+    </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @restaurant.name %>
-</p>
+    <ul>
+      <%@restaurant.reviews.each do |review| %>
+      <%end%>
+      <li>
+      <%= review.content%>
+       <% review.rating.times do %>
+      <i class="fa fa-stars"></i>
+      </li>
+      <%end%>
+    </ul>
+  </div>
 
-<p>
-  <strong>Address:</strong>
-  <%= @restaurant.address %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @restaurant.description %>
-</p>
+<%= simple_form_for([@restaurant, @review]) do |f| %>
+  <%= f.input :content, input_html: {class:"my_input_class", id:'js-input'}, label_html:{class:"my_label_class"}, wrapper_html:{class:"my_wrapper_class"} %>
+  <%= f.input :rating %>
+  <%= f.submit %>
+<% end %>
 
-<p>
-  <strong>Stars:</strong>
-  <%= @restaurant.stars %>
-</p>
+
+
+
+
 
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <%= link_to 'Back', restaurants_path %>

@@ -1,14 +1,19 @@
 <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://media-cdn.tripadvisor.com/media/photo-s/0b/4b/32/fb/restaurant-le-cinq.jpg');">
- <div class="card-shadow"></div>
-  <div class="card-category"></div>
-  <div class="card-description">french</div>
+ <span class="card-shadow"></span>
+  <span class="card-category"></span>
+  <span class="card-description">french</span>
     <h2><%= restaurant.name%></h2>
     <p><%= restaurant.address%></p>
     <p>
-    <% restaurant.stars.times do %>
+    <% restaurant.stars do %>
     <i class="fa fa-stars"></i>
     <% end %>
     </p>
+    <span class="card-user">
+    <img src = 'http://placehold.it/50x50' class="avatar avatar-bordered"/>
+    </span>
+    <a href="#" class= "card-link"></a>
+    <%=link_to "", restaurant_path(restaurant), class: "card-link"%>
   </div>
 
 
